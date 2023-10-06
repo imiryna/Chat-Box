@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+// import { useState } from "react";
+import { WrapperCss, WrapperChatCss } from "./App.styled.jsx";
+import { Navigation } from "./components/navigation/navigation.jsx";
+import { TypingBox } from "./components/typingBox/typingBox.jsx";
+import { SideBar } from "./components/sidebar/sideBar.jsx";
+import { ChatContainer } from "./components/chatContainer/chatContainer.jsx";
 
-function App() {
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <WrapperCss>
+        <SideBar />
+        <WrapperChatCss>
+          <Navigation />
+          <ChatContainer />
+          <TypingBox />
+        </WrapperChatCss>
+      </WrapperCss>
+    </>
   );
-}
-
-export default App;
+};
