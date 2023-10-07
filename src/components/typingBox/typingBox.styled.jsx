@@ -2,18 +2,25 @@ import styled from "styled-components";
 
 export const TypingBoxCss = styled.div`
   position: fixed;
-  bottom: 0;
-  width: 100%;
+  bottom: 2%;
+  right: 30%;
+  min-width: 320px;
   display: flex;
-  padding: 8px;
   justify-content: center;
   background: var(--outgoing-chat-bg);
-  border-top: 1px solid var(--incoming-chat-border);
+  border: transporent;
+
+  @media (max-width: 768px) {
+    min-width: 492px;
+  }
+  @media (max-width: 1200px) {
+    min-width: 1147px;
+  }
 `;
 export const TypingContentCss = styled.div`
   display: flex;
   max-width: 950px;
-  width: 100%;
+  // width: 100%;
   align-items: flex-end;
   & span {
     width: 55px;
@@ -28,22 +35,23 @@ export const TypingContentCss = styled.div`
 `;
 
 export const TypingTextareaCss = styled.div`
-  width: 100%;
+  // width: 100%;
   display: flex;
-  position: relative;
+  // position: relative;
 `;
 
-export const TextareaCss = styled.textarea`
-resize: none;
+export const TextareaCss = styled.textarea`s
+    resize: none;
     height: 55px;
-    width: 100%;
+    width: 258px;
     border: none;
-    padding: 15px 45px 15px 20px;
+    padding: 10px 40px 10px 12px;
     color: var(--text-color);
     font-size: 1rem;
     border-radius: 4px;
-    max-height: 250px;
-    overflow-y: auto;
+    max-height: 200px;
+    overflow-y: hidden;
+    
     background: var(--incoming-chat-bg);
     outline: 1px solid var(--incoming-chat-border);
   }
@@ -53,6 +61,14 @@ resize: none;
   & textarea:valid ~ span {
     visibility: visible;
   }
+
+  @media scrin (max-width: 768px) {
+    width: 420px;
+    max-height: 250px;
+    padding: 15px 45px 15px 20px;
+    overflow-y: auto;
+  }
+ 
 `;
 
 export const SpanCss = styled.span`
@@ -72,6 +88,28 @@ export const TypingControlsCss = styled.div`
   }
   &span:hover {
     background: var(--icon-hover-bg);
+  }
+`;
+
+export const TypingButtonCss = styled.span`
+  user-select: none;
+  cursor: pointer;
+  display: flex;
+  height: 40px;
+  padding: 4px 12px;
+  margin-left: 10px;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  text-align: center;
+  color: var(--outgoing-chat-bg);
+  cursor: pointer;
+  background: var(--incoming-chat-bg);
+  border: 1px solid var(--icon-color);
+  border-radius: 6px;
+
+  @media (max-width: 768px) {
+    font-size: 1.25rem !important;
   }
 `;
 

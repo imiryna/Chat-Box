@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const ChatContainerCss = styled.div`
   overflow-y: auto;
   max-height: 100vh;
+  margin-left: 244px;
   padding-bottom: 150px;
   display: flex;
 

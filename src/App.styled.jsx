@@ -1,8 +1,15 @@
 import styled from "styled-components";
 
 export const WrapperCss = styled.div`
-  padding: 0;
-  display: flex;
+  
+   display: flex;
+    width: 244px
+    padding: 8px;
+
+  @media (min-width: 768px);
+   {
+   
+  }
 `;
 
 export const WrapperChatCss = styled.div`

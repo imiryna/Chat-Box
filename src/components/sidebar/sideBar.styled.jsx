@@ -4,10 +4,12 @@ export const ContainerCss = styled.div`
   padding: 8px;
   height: 100vh;
   width: 244px;
-  // display: flex;
+  position: fixed;
   background: var(--outgoing-chat-border);
+  overflow: auto;
+  display: flex;
 
-  @media (min-widht: 320px; max-widht: 768px) {
+  @media (min-widht: 768px) {
     display: none;
   }
 `;
