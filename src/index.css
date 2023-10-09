@@ -1,13 +1,13 @@
 @import-normalize; /* bring in normalize.css styles */
 
 /* Reset styles */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 * {
   padding: 0;
   margin: 0;
   border: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 h1,
@@ -66,15 +66,6 @@ input {
   --incoming-chat-bg: #444654;
   --outgoing-chat-border: #343541;
   --incoming-chat-border: #444654;
-}
-.light-mode {
-  --text-color: #343541;
-  --icon-color: #a9a9bc;
-  --icon-hover-bg: #f1f1f3;
-  --placeholder-color: #6c6c6c;
-  --outgoing-chat-bg: #ffffff;
-  --incoming-chat-bg: #f7f7f8;
-  --incoming-chat-border: #d9d9e3;
 }
 
 body {

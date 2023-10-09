@@ -13,9 +13,9 @@ export const Navigation = ({ changeShowModal }) => {
 
   return (
     <NavBoxCss>
-      <HambrgMenuCss>&#x2630;</HambrgMenuCss>
+      <HambrgMenuCss onClick={openModal}>&#x2630;</HambrgMenuCss>
       <TitleCss> New chat</TitleCss>
-      <IconPlasCss onClick={openModal}>&#65291;</IconPlasCss>
+      <IconPlasCss>&#65291;</IconPlasCss>
     </NavBoxCss>
   );
 };

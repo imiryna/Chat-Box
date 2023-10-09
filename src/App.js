@@ -13,13 +13,13 @@ import { ChatContainer } from './components/chatContainer/chatContainer.jsx';
 export const App = () => {
   const [messageStack, setMessageStack] = useState([
     {
-      text: 'loresdfgbjsdhbcksdjncjsnvljbhjbvhbdkcnviherbvijdncjdhbvhebvu',
+      text: 'loresdf gbjsdhbck sdjnc jsnvl jbhj bvhbdkcn viherb vijdnc jdhbvhebvu',
       author: 'user',
       timestamp: '1234567890',
       messageId: 'fg45673',
     },
     {
-      text: 'loresdfgbjsdhbcksdjncjsnvljbhjbvhbdkcnviherbvijdncjdhbvhebvu',
+      text: 'lores dfgb js dhbcksdjn cjsn vljbhj bvhbd kcnvihe rbvijd ncjdhb vhebvu',
       author: 'openai',
       timestamp: '1234567890',
       messageId: 'fg45674',
@@ -31,15 +31,13 @@ export const App = () => {
       messageId: 'fg45675',
     },
   ]);
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(true);
 
   const addToMessageStack = newMessage => {
     setMessageStack(messageStack => [...messageStack, newMessage]);
   };
   const changeShowModal = newState => {
-    setShowModal({
-      showModal: newState,
-    });
+    setShowModal(newState);
   };
 
   return (
@@ -50,7 +48,11 @@ export const App = () => {
         </WrapperCss>
         {/* <WrapperChatCss id="wrapper"> */}
         <Navigation id="nav" changeShowModal={changeShowModal} />
-        <ChatContainer id="chatcontainer" messagesList={messageStack} />
+        <ChatContainer
+          id="chatcontainer"
+          messagesList={messageStack}
+          changeShowModal={changeShowModal}
+        />
         <TypingBox id="typingbox" addMessage={addToMessageStack} />
         {/* </WrapperChatCss> */}
       </div>

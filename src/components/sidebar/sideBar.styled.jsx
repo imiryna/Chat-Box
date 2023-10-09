@@ -22,7 +22,7 @@ export const ContainerCss = styled.div`
     position: fixed;
     background: var(--outgoing-chat-border);
     overflow: auto;
-    display: flex;
+    display: ${props => props.showmodal};
   }
 `;
 
@@ -33,6 +33,11 @@ export const NavBoxCss = styled.ul`
   align-items: start;
   flex: 1 1 0%;
   background: inherit;
+  @media (max-width: 768px) {
+    flex-grow: 3, 0.6;
+
+    gap: 35px;
+  }
 `;
 
 export const NavBoxItemsCss = styled.li`
@@ -58,5 +63,10 @@ export const NavBoxItemsCss = styled.li`
     font-size: 12px;
     color: var(--outgoing-chat-bg);
     margin-right: 60px;
+  }
+  @media (max-width: 768px) {
+    flex-grow: 2;
+    flex-grow: 3;
+    flex-grow: 0.6;
   }
 `;
