@@ -16,7 +16,12 @@ export const ChatContainerCss = styled.div`
 export const BtnBox = styled.div`
   margin-left: 0;
 
-  @media (min-width: 725px) {
+  @media (min-width: 768px) {
+    margin-left: 300px;
+    margin-right: 90px;
+  }
+
+  @media (min-width: 1200px) {
     margin-left: 344px;
     margin-right: 144px;
   }
