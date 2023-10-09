@@ -39,5 +39,7 @@ const MessageChat = ({ author, id, text, dateTime }) => {
           <p>{dateTime}</p>
         </IncomingMessageCss>
       );
+    default:
+      console.log('wrong user name');
   }
 };

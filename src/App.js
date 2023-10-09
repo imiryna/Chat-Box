@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { WrapperCss, WrapperChatCss, SectionCss } from './App.styled.jsx';
+import { WrapperCss } from './App.styled.jsx';
 import { Navigation } from './components/navigation/navigation.jsx';
 import { TypingBox } from './components/typingBox/typingBox.jsx';
 import { SideBar } from './components/sidebar/sideBar.jsx';
