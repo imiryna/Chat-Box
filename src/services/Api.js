@@ -1,18 +1,18 @@
-import axios from "axios";
+import axios from 'axios';
 
-const API_KEY = "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";
+const API_KEY = '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';
 
-export const fetchMessageChat = async (userText) => {
-  const API_URL = "https://api.openai.com/v1/completions";
+export const fetchMessageChat = async userText => {
+  const API_URL = 'https://api.openai.com/v1/completions';
   const paramsRequest = {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
       Authorization: `Bearer ${API_KEY}`,
     },
   };
   const requestData = JSON.stringify({
-    model: "text-davinci-003",
+    model: 'text-davinci-003',
     prompt: userText,
     max_tokens: 2048,
     temperature: 0.2,

@@ -1,30 +1,34 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const TypingBoxCss = styled.div`
   position: fixed;
-  bottom: 2%;
-  right: 30%;
+  bottom: 4%;
+  left: 3%;
   min-width: 320px;
   display: flex;
   justify-content: center;
   background: var(--outgoing-chat-bg);
   border: transporent;
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     min-width: 492px;
+    left: 35%;
   }
-  @media (max-width: 1200px) {
+  @media (min-width: 1200px) {
     min-width: 1147px;
   }
 `;
 export const TypingContentCss = styled.div`
   display: flex;
-  max-width: 950px;
-  // width: 100%;
-  align-items: flex-end;
+  min-width: 320px;
+  width: 100%;
+  align-items: center;
+  position: relative;
+
   & span {
-    width: 55px;
-    height: 55px;
+    position: absilut;
+    width: 50px;
+    height: 50px;
     display: flex;
     border-radius: 4px;
     font-size: 1.35rem;
@@ -32,20 +36,25 @@ export const TypingContentCss = styled.div`
     justify-content: center;
     color: var(--icon-color);
   }
+  // @media (min-width: 769px) {
+  //   min-width: 492px;
+  // }
+  // @media (min-width: 1200px) {
+  //   min-width: 1147px;
+  // }
 `;
 
 export const TypingTextareaCss = styled.div`
-  // width: 100%;
   display: flex;
-  // position: relative;
+  position: relative;
 `;
 
 export const TextareaCss = styled.textarea`s
     resize: none;
-    height: 55px;
-    width: 258px;
+    height: 50px;
+    width: 100%;
     border: none;
-    padding: 10px 40px 10px 12px;
+    padding: 10px 20px 10px 12px;
     color: var(--text-color);
     font-size: 1rem;
     border-radius: 4px;
@@ -62,8 +71,8 @@ export const TextareaCss = styled.textarea`s
     visibility: visible;
   }
 
-  @media scrin (max-width: 768px) {
-    width: 420px;
+  @media (min-width: 769px) {
+    
     max-height: 250px;
     padding: 15px 45px 15px 20px;
     overflow-y: auto;
@@ -97,9 +106,9 @@ export const TypingButtonCss = styled.span`
   display: flex;
   height: 40px;
   padding: 4px 12px;
-  margin-left: 10px;
+  margin-left: 8px;
   flex-direction: row;
-  gap: 12px;
+
   align-items: center;
   text-align: center;
   color: var(--outgoing-chat-bg);

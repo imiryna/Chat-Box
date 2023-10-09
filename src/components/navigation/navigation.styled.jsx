@@ -1,13 +1,13 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const NavBoxCss = styled.div`
   display: flex;
-  width: 100%;
+  min-width: 320px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 4px;
-  outline: 2px solid lightcoral;
+
   background: var(--outgoing-chat-bg-dark);
 
   @media (min-width: 768px) {
@@ -16,24 +16,24 @@ export const NavBoxCss = styled.div`
 `;
 
 export const HambrgMenuCss = styled.span`
-  font-size: 30px;
+  font-size: 27px;
   font-weight: lighter;
   color: var(--outgoing-chat-bg);
-  padding: 10px;
+  padding: 15px;
   cursor: pointer;
 `;
 
 export const TitleCss = styled.h1`
-  font-size: 20px;
+  font-size: 17px;
   font-weight: normal;
   color: var(--outgoing-chat-bg);
 `;
 
 export const IconPlasCss = styled.span`
-  font-size: 30px;
+  font-size: 27px;
   font-weight: lighter;
   color: var(--outgoing-chat-bg);
-  padding: 10px;
+  padding: 15px;
   cursor: pointer;
 `;
 // .btn {

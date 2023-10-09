@@ -1,16 +1,28 @@
-import styled from "styled-components";
-
+import styled from 'styled-components';
+export const MyTag = styled.button.attrs(props => ({
+  title: props.myThisThingValue,
+}))`
+  background: ${props => props.thisIsAlsoMyThing};
+`;
 export const ContainerCss = styled.div`
-  padding: 8px;
-  height: 100vh;
-  width: 244px;
   position: fixed;
+  padding: 8px;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: ${props => props.showmodal};
   background: var(--outgoing-chat-border);
-  overflow: auto;
-  display: flex;
+  z-index: 1200;
 
-  @media (min-widht: 768px) {
-    display: none;
+  @media (min-width: 768px) {
+    padding: 8px;
+    height: 100vh;
+    width: 244px;
+    position: fixed;
+    background: var(--outgoing-chat-border);
+    overflow: auto;
+    display: flex;
   }
 `;
 
