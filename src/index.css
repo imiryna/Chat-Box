@@ -65,9 +65,10 @@ input {
   --outgoing-chat-bg-dark: #343541;
   --incoming-chat-bg: #444654;
   --outgoing-chat-border: #343541;
-  --incoming-chat-border: #444654;
+  --incoming-chat-border: #f2b059;
 }
 
 body {
   background: var(--placeholder-color);
+  
 }

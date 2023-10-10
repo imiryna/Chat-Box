@@ -67,7 +67,7 @@ export const OpenSideBarCss = styled.div`
 
   @media (min-width: 767px) {
    position: absolute;
-  top: 10%;
+  top: 5%;
   left: 2%;
   z-index: 200;
   display: flex;
