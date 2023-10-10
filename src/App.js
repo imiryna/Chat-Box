@@ -12,24 +12,24 @@ import { ChatContainer } from './components/chatContainer/chatContainer.jsx';
  */
 export const App = () => {
   const [messageStack, setMessageStack] = useState([
-    {
-      text: 'loresdf gbjsdhbck sdjnc jsnvl jbhj bvhbdkcn viherb vijdnc jdhbvhebvu',
-      author: 'user',
-      timestamp: '1234567890',
-      messageId: 'fg45673',
-    },
-    {
-      text: 'lores dfgb js dhbcksdjn cjsn vljbhj bvhbd kcnvihe rbvijd ncjdhb vhebvu',
-      author: 'openai',
-      timestamp: '1234567890',
-      messageId: 'fg45674',
-    },
-    {
-      text: 'loresdfgbjsdhbcksdjncjsnvljbhjbvhbdkcnviherbvijdncjdhbvhebvu',
-      author: 'user',
-      timestamp: '1234567890',
-      messageId: 'fg45675',
-    },
+    // {
+    //   text: 'loresdf gbjsdhbck sdjnc jsnvl jbhj bvhbdkcn viherb vijdnc jdhbvhebvu',
+    //   author: 'user',
+    //   timestamp: '1234567890',
+    //   messageId: 'fg45673',
+    // },
+    // {
+    //   text: 'lores dfgb js dhbcksdjn cjsn vljbhj bvhbd kcnvihe rbvijd ncjdhb vhebvu',
+    //   author: 'openai',
+    //   timestamp: '1234567890',
+    //   messageId: 'fg45674',
+    // },
+    // {
+    //   text: 'loresdfgbjsdhbcksdjncjsnvljbhjbvhbdkcnviherbvijdncjdhbvhebvu',
+    //   author: 'user',
+    //   timestamp: '1234567890',
+    //   messageId: 'fg45675',
+    // },
   ]);
   const [showModal, setShowModal] = useState(true);
 

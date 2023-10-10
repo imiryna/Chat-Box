@@ -3,11 +3,9 @@ import * as API from '../../services/Api';
 import { nanoid } from 'nanoid';
 
 import {
-  TypingBoxCss,
-  TypingContentCss,
-  TypingTextareaCss,
   TextareaCss,
   TypingButtonCss,
+  TextareaContainerCss
 } from './typingBox.styled';
 
 export const TypingBox = ({ addMessage }) => {
@@ -43,25 +41,26 @@ export const TypingBox = ({ addMessage }) => {
     setMessage(e.target.value);
   };
   return (
-    <TypingBoxCss>
-      <TypingContentCss>
-        <TypingTextareaCss>
-          <TextareaCss
-            onChange={getInputValue}
-            id="chat-input"
-            spellCheck="false"
-            placeholder="Enter a prompt here"
-            required
-          ></TextareaCss>
-          <TypingButtonCss
-            onClick={handleOutputMessage}
-            id="send-btn"
-            className="material-symbols-rounded"
-          >
-            <span>&#10147;</span>
-          </TypingButtonCss>
-        </TypingTextareaCss>
-      </TypingContentCss>
-    </TypingBoxCss>
+    
+   
+    
+    <TextareaContainerCss>
+      <TextareaCss
+        onChange={getInputValue}
+        id="chat-input"
+        spellCheck="false"
+        placeholder="Enter a prompt here"
+        required
+      ></TextareaCss>
+      <TypingButtonCss
+        onClick={handleOutputMessage}
+        id="send-btn"
+        className="material-symbols-rounded"
+      >
+        <span>&#10147;</span>
+      </TypingButtonCss>
+    </TextareaContainerCss>
+  
+   
   );
 };

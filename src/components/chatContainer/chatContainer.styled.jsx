@@ -8,6 +8,16 @@ export const ChatContainerCss = styled.div`
   margin-bottom: 50px;
   align-items: flex-start;
   position: relative;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #8f54a0;
+    
+    border: 3px solid #ffffff;
+
   @media (min-width: 7250px) {
     margin-bottom: 250px;
   }
@@ -70,8 +80,8 @@ export const OpenSideBarCss = styled.div`
   text-align: center;
   color: var(--outgoing-chat-border);
   cursor: pointer;
-  background: inherit;
-  border: 1px solid var(--outgoing-chat-border);
+  background: var(--outgoing-chat-bg);
+  border: 1px solid var(--outgoing-chat-bg);
   border-radius: 6px;
   & span {
     width: 16px;

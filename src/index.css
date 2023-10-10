@@ -60,7 +60,7 @@ input {
   --text-color: #ffffff;
   --icon-color: #acacbe;
   --icon-hover-bg: #5b5e71;
-  --placeholder-color: #dcdcdc;
+  --placeholder-color: #f1efef;
   --outgoing-chat-bg: #ffffff;
   --outgoing-chat-bg-dark: #343541;
   --incoming-chat-bg: #444654;
@@ -69,5 +69,5 @@ input {
 }
 
 body {
-  background: var(--outgoing-chat-bg);
+  background: var(--placeholder-color);
 }
