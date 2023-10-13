@@ -17,7 +17,7 @@ export const ChatContainer = ({ messagesList, changeShowModal }) => {
     <ChatContainerCss>
       <BtnBox>
         <OpenSideBarCss>
-          <span onClick={openModal}>&#128386;</span>
+          <span onClick={openModal} data-title='Open sidebar'>&#128386;</span>
         </OpenSideBarCss>
         {messagesList.map(message => (
           <MessageChat

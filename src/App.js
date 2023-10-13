@@ -31,7 +31,7 @@ export const App = () => {
     //   messageId: 'fg45675',
     // },
   ]);
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState('');
 
   const addToMessageStack = newMessage => {
     setMessageStack(messageStack => [...messageStack, newMessage]);

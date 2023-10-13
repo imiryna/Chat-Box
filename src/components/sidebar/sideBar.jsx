@@ -2,7 +2,14 @@ import React from 'react';
 import { ContainerCss, NavBoxCss, NavBoxItemsCss } from './sideBar.styled';
 
 export const SideBar = ({ showModal, toggleModal }) => {
-  const displayModal = showModal ? 'flex' : 'none';
+  let displayModal;
+  if (typeof showModal === 'boolean') {
+    displayModal = showModal ? 'flex' : 'none';
+  }else if (typeof showModal === "string") {
+    displayModal = showModal;
+    
+  } 
+
   const closeModal = () => {
     toggleModal(false);
   };
@@ -14,7 +21,7 @@ export const SideBar = ({ showModal, toggleModal }) => {
           <p>New Chat</p>
         </NavBoxItemsCss>
         <NavBoxItemsCss>
-          <span onClick={closeModal}>&#128386;</span>
+          <span onClick={closeModal} data-title='Close sidebar'>&#128386;</span>
         </NavBoxItemsCss>
       </NavBoxCss>
     </ContainerCss>

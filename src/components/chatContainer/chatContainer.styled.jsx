@@ -87,7 +87,22 @@ export const OpenSideBarCss = styled.div`
     width: 16px;
     height: 16px;
     color: var(--outgoing-chat-border);
-  
+    position: relative;
   }
+
+  &span:hover::after{
+    content: attr(data-title);
+    position: absolute;
+    left: 20%; 
+    top: 4%;
+    z-index: 100;
+    height: 15px;
+    width: 24px;
+    background: var(--outgoing-chat-border);
+    color: var(--outgoing-chat-bg);
+    font-size: 10px;
+    padding: 5px;
+    border: 1px solid var(--outgoing-chat-bg);
+    border-radius: 5px;
   
 `;

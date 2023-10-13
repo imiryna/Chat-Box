@@ -11,7 +11,7 @@ export const ContainerCss = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  display: ${props => props.showmodal};
+  display: ${props => props.showmodal || 'none'};
   background: var(--outgoing-chat-border);
   z-index: 1200;
 
@@ -22,7 +22,7 @@ export const ContainerCss = styled.div`
     position: fixed;
     background: var(--outgoing-chat-border);
     overflow: auto;
-    display: ${props => props.showmodal};
+    display: ${props => props.showmodal || "flex"};
   }
 `;
 
@@ -53,12 +53,30 @@ export const NavBoxItemsCss = styled.li`
   background: inherit;
   border: 1px solid var(--icon-color);
   border-radius: 6px;
+
   & span {
     width: 16px;
     height: 16px;
     color: var(--outgoing-chat-bg);
-    // margin-right: 24px;
+    position: relative;
   }
+  & span:hover::after{
+    content: attr(data-title);
+    position: absolute;
+    left: 20%; 
+    top: 4%;
+    width: 46px;
+    height: 16px;
+    z-index: 100;
+    background: var(--outgoing-chat-border);
+    color: var(--outgoing-chat-bg);
+    font-size: 10px;
+    padding: 5px;
+    border: 1px solid var(--outgoing-chat-bg);
+    border-radius: 5px;
+  }
+
+
   & p {
     font-size: 12px;
     color: var(--outgoing-chat-bg);
