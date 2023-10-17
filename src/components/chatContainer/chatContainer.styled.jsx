@@ -14,9 +14,10 @@ export const ChatContainerCss = styled.div`
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #8f54a0;
+    background-color: #7c767d;
     
     border: 3px solid #ffffff;
+  }
 
   @media (min-width: 7250px) {
     margin-bottom: 250px;
@@ -62,47 +63,59 @@ export const IncomingMessageCss = styled(ChatCss)`
   // margin-right: 250px;
 `;
 
+export const ToolTipCss = styled.div`
+  /* Tooltip styles */
+  position: absolute;
+  top: 0;
+  left: 115%;
+  background: var(--outgoing-chat-border);
+  color: var(--outgoing-chat-bg);
+  padding: 10px 20px;
+  border: 1px solid var(--outgoing-chat-bg);
+  border-radius: 5px;
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+  transition: all 0.3s ease-in-out;
+  
+  box-shadow: 0 0 3px rgba(56, 54, 54, 0.86);
+`;
+
 export const OpenSideBarCss = styled.div`
   display: none;
 
-  @media (min-width: 767px) {
-   position: absolute;
-  top: 5%;
-  left: 2%;
-  z-index: 200;
-  display: flex;
-  height: 40px;
-  padding: 4px 12px;
-
-  flex-direction: row;
-  gap: 12px;
-  align-items: center;
-  text-align: center;
-  color: var(--outgoing-chat-border);
-  cursor: pointer;
-  background: var(--outgoing-chat-bg);
-  border: 1px solid var(--outgoing-chat-bg);
-  border-radius: 6px;
-  & span {
-    width: 16px;
-    height: 16px;
-    color: var(--outgoing-chat-border);
-    position: relative;
-  }
-
-  &span:hover::after{
-    content: attr(data-title);
+  @media (min-width: 768px) {
     position: absolute;
-    left: 20%; 
-    top: 4%;
-    z-index: 100;
-    height: 15px;
-    width: 24px;
-    background: var(--outgoing-chat-border);
-    color: var(--outgoing-chat-bg);
-    font-size: 10px;
-    padding: 5px;
+    top: 20%;
+    left: 2%;
+    z-index: 200;
+    display: flex;
+    height: 40px;
+    padding: 4px 12px;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+    text-align: center;
+    color: var(--outgoing-chat-border);
+    width: auto;
+	  white-space: nowrap;
+	  white-space: nowrap;
+    background: var(--outgoing-chat-bg);
     border: 1px solid var(--outgoing-chat-bg);
-    border-radius: 5px;
-  
+    border-radius: 6px;
+    
+    & span {
+      width: 16px;
+      height: 16px;
+      color: var(--outgoing-chat-border);
+      position: relative;
+
+  }
+ }
+
+  &:hover ${ToolTipCss} {
+    opacity: 1;
+    visibility: visible;
+  }
 `;

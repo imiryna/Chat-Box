@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContainerCss, NavBoxCss, NavBoxItemsCss } from './sideBar.styled';
+import { ContainerCss, NavBoxCss, NavBoxItemsCss, ToolTipCss } from './sideBar.styled';
 
 export const SideBar = ({ showModal, toggleModal }) => {
   let displayModal;
@@ -20,8 +20,9 @@ export const SideBar = ({ showModal, toggleModal }) => {
           <span>&#9998;</span>
           <p>New Chat</p>
         </NavBoxItemsCss>
-        <NavBoxItemsCss>
-          <span onClick={closeModal} data-title='Close sidebar'>&#128386;</span>
+        <NavBoxItemsCss onClick={closeModal} data-title='Close sidebar'>
+          <span>&#128386;</span>
+          <ToolTipCss>Close sidebar</ToolTipCss>
         </NavBoxItemsCss>
       </NavBoxCss>
     </ContainerCss>

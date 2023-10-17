@@ -1,9 +1,13 @@
 import styled from 'styled-components';
+
+
 export const MyTag = styled.button.attrs(props => ({
   title: props.myThisThingValue,
 }))`
   background: ${props => props.thisIsAlsoMyThing};
 `;
+
+
 export const ContainerCss = styled.div`
   position: fixed;
   padding: 8px;
@@ -33,11 +37,29 @@ export const NavBoxCss = styled.ul`
   align-items: start;
   flex: 1 1 0%;
   background: inherit;
-  @media (max-width: 768px) {
-    flex-grow: 3, 0.6;
 
-    gap: 35px;
+  @media (max-width: 767px) {
+    gap: 85px;
   }
+
+`;
+
+export const ToolTipCss = styled.div`
+ position: absolute;
+  top: 0;
+  left: 100%;
+  background: var(--outgoing-chat-border);
+  color: var(--outgoing-chat-bg);
+  padding: 10px 20px;
+  border: 1px solid var(--outgoing-chat-bg);
+  border-radius: 5px;
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 3px rgba(56, 54, 54, 0.86);
+  z-index:1300;
 `;
 
 export const NavBoxItemsCss = styled.li`
@@ -53,6 +75,13 @@ export const NavBoxItemsCss = styled.li`
   background: inherit;
   border: 1px solid var(--icon-color);
   border-radius: 6px;
+  user-select: none;
+
+  // hover to show tooltip
+  &:hover ${ToolTipCss} {
+    opacity: 1;
+    visibility: visible;
+  }
 
   & span {
     width: 16px;
@@ -60,28 +89,30 @@ export const NavBoxItemsCss = styled.li`
     color: var(--outgoing-chat-bg);
     position: relative;
   }
-  & span:hover::after{
+  /* & span:hover::after{
     content: attr(data-title);
     position: absolute;
-    left: 20%; 
-    top: 4%;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
     width: 46px;
     height: 16px;
     z-index: 100;
     background: var(--outgoing-chat-border);
     color: var(--outgoing-chat-bg);
-    font-size: 10px;
+    font-size: 12px;
     padding: 5px;
     border: 1px solid var(--outgoing-chat-bg);
     border-radius: 5px;
-  }
-
-
+    }
+  } */
+  
   & p {
     font-size: 12px;
     color: var(--outgoing-chat-bg);
     margin-right: 60px;
   }
+
   @media (max-width: 768px) {
     flex-grow: 2;
     flex-grow: 3;

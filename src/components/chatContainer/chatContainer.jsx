@@ -5,6 +5,7 @@ import {
   OutgoingMessageCss,
   OpenSideBarCss,
   BtnBox,
+  ToolTipCss
   // ChatCss,
   // AvatarCss,
 } from './chatContainer.styled';
@@ -16,8 +17,9 @@ export const ChatContainer = ({ messagesList, changeShowModal }) => {
   return (
     <ChatContainerCss>
       <BtnBox>
-        <OpenSideBarCss>
-          <span onClick={openModal} data-title='Open sidebar'>&#128386;</span>
+        <OpenSideBarCss onClick={openModal} data-title='Open sidebar'>
+          <span >&#128386;</span>
+          <ToolTipCss>Open sidebar</ToolTipCss>
         </OpenSideBarCss>
         {messagesList.map(message => (
           <MessageChat
