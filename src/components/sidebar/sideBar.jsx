@@ -25,6 +25,14 @@ export const SideBar = ({ showModal, toggleModal }) => {
           <ToolTipCss>Close sidebar</ToolTipCss>
         </NavBoxItemsCss>
       </NavBoxCss>
+      <div>
+        <svg width="9" height="9">
+          <use href="../../images/chat.svg"></use>
+        </svg>
+        <p> Title of Chat</p>
+        <span>Desc</span>
+        <span>Del</span>
+      </div>
     </ContainerCss>
   );
 };

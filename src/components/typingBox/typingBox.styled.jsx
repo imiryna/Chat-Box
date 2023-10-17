@@ -5,10 +5,13 @@ export const TextareaContainerCss = styled.div`
   bottom: 4%;
   left: 0;
   width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
 
   @media (min-width: 768px){
     left: 300px;
     width: 50%;
+    
   }
 
   @media (min-width: 1200px){

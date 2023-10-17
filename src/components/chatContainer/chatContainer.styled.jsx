@@ -43,11 +43,18 @@ export const ChatCss = styled.div`
   // flex-direcyion: column;
   padding: 15px 10px;
   margin-bottom: 20px;
-  justify-content: center;
+ 
   border-radius: 10px;
   align-items: flex-start;
   font-size: 14px;
   overflow: auto;
+`;
+
+export const BoxMessageCss = styled.div`
+ display: flex;
+ flex-direction: row;
+ justify-content: start;
+ gap: 20px;
 `;
 
 export const OutgoingMessageCss = styled(ChatCss)`
@@ -87,11 +94,11 @@ export const OpenSideBarCss = styled.div`
 
   @media (min-width: 768px) {
     position: absolute;
-    top: 20%;
+    top: 10%;
     left: 2%;
     z-index: 200;
     display: flex;
-    height: 40px;
+    /* height: 40px; */
     padding: 4px 12px;
     flex-direction: row;
     gap: 12px;

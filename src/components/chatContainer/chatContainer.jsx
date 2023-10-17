@@ -5,7 +5,8 @@ import {
   OutgoingMessageCss,
   OpenSideBarCss,
   BtnBox,
-  ToolTipCss
+  ToolTipCss,
+  BoxMessageCss
   // ChatCss,
   // AvatarCss,
 } from './chatContainer.styled';
@@ -39,10 +40,10 @@ const MessageChat = ({ author, id, text, dateTime }) => {
     case 'user':
       return (
         <OutgoingMessageCss id={id}>
-          <div className="chat-info">
-            {/* img with logo> */}
-            <p>You: {text}</p>
-          </div>
+          <BoxMessageCss>
+          <img src='../../images/user.jpg'/>
+            <p> {text}</p>
+          </BoxMessageCss>
         </OutgoingMessageCss>
       );
 
@@ -50,6 +51,7 @@ const MessageChat = ({ author, id, text, dateTime }) => {
       return (
         <IncomingMessageCss id={id}>
           <div className="chat-info">
+          <img src='../../images/chatbot.jpg' alt='user avatar'/>
             <p>ChatGPT: {text}</p>
           </div>
         </IncomingMessageCss>

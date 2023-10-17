@@ -25,7 +25,7 @@ export const ContainerCss = styled.div`
     width: 244px;
     position: fixed;
     background: var(--outgoing-chat-border);
-    overflow: auto;
+    /* overflow: auto; */
     display: ${props => props.showmodal || "flex"};
   }
 `;
@@ -33,26 +33,26 @@ export const ContainerCss = styled.div`
 export const NavBoxCss = styled.ul`
   display: flex;
   flex-direction: row;
-  gap: 12px;
+  justify-content: space-between;
+  gap: 20px;
   align-items: start;
   flex: 1 1 0%;
   background: inherit;
 
+
   @media (max-width: 767px) {
-    gap: 85px;
+    gap: 95px;
   }
 
 `;
 
 export const ToolTipCss = styled.div`
  position: absolute;
-  top: 0;
-  left: 100%;
+  top: 2%;
+  left: 102%;
   background: var(--outgoing-chat-border);
   color: var(--outgoing-chat-bg);
   padding: 10px 20px;
-  border: 1px solid var(--outgoing-chat-bg);
-  border-radius: 5px;
   font-size: 14px;
   opacity: 0;
   visibility: hidden;
@@ -60,6 +60,11 @@ export const ToolTipCss = styled.div`
   transition: all 0.3s ease-in-out;
   box-shadow: 0 0 3px rgba(56, 54, 54, 0.86);
   z-index:1300;
+  width: auto;
+	white-space: nowrap;
+	white-space: nowrap;
+  border: 1px solid var(--outgoing-chat-bg);
+  border-radius: 6px;
 `;
 
 export const NavBoxItemsCss = styled.li`
