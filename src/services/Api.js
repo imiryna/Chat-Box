@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = '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';
+const API_KEY = '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';
 
 export const fetchMessageChat = async userText => {
   const API_URL = 'https://api.openai.com/v1/completions';

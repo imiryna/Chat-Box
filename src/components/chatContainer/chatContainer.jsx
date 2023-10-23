@@ -22,14 +22,14 @@ export const ChatContainer = ({ messagesList, changeShowModal }) => {
           <span >&#128386;</span>
           <ToolTipCss>Open sidebar</ToolTipCss>
         </OpenSideBarCss>
-        {messagesList.map(message => (
+        {/* {messagesList.map(message => (
           <MessageChat
             author={message.author}
             key={message.messageId}
             text={message.text}
             dateTime={message.timestamp}
           />
-        ))}
+        ))} */}
       </BtnBox>
     </ChatContainerCss>
   );

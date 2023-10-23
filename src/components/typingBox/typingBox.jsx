@@ -10,27 +10,7 @@ import {
 
 export const TypingBox = ({ addMessage }) => {
   const [message, setMessage] = useState('');
-
-  const handleOutputMessage = async () => {
-    if (message === '') {
-      return;
-    }
-    const inputMessage = message;
-    inputReset();
-    // add user message to messageStack of App component
-    addMessage(createMessageObj(inputMessage, 'user'));
-
-    await API.fetchMessageChat(inputMessage.trim())
-      .then(res => {
-        const answer = res.choices[0].text.trim();
-        addMessage(createMessageObj(answer, 'openai'));
-      })
-      .catch(error => {
-        console.log(error);
-      });      
-  };
-  
-
+ 
   const createMessageObj = (text, author) => {
     return {
       text: text,
@@ -53,6 +33,24 @@ export const TypingBox = ({ addMessage }) => {
       handleOutputMessage();
     }
   };
+
+  const handleOutputMessage = async () => {
+    if (message === '') {
+      return;
+    }
+    const inputMessage = message;
+    inputReset();
+    // add user message to messageStack of App component
+    addMessage(createMessageObj(inputMessage, 'user'));
+
+    try {
+      const {choices} = await API.fetchMessageChat(inputMessage.trim());
+      const answer = choices[0].text.trim();
+      addMessage(createMessageObj(answer, 'openai'))
+    } catch (error) {
+      
+    }     
+   };
 
   return (
     <TextareaContainerCss>

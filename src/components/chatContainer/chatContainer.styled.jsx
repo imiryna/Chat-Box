@@ -80,7 +80,7 @@ export const ToolTipCss = styled.div`
   padding: 10px 20px;
   border: 1px solid var(--outgoing-chat-bg);
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 12px;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.2s, visibility 0.2s;
@@ -98,7 +98,6 @@ export const OpenSideBarCss = styled.div`
     left: 2%;
     z-index: 200;
     display: flex;
-    /* height: 40px; */
     padding: 4px 12px;
     flex-direction: row;
     gap: 12px;
@@ -106,7 +105,6 @@ export const OpenSideBarCss = styled.div`
     text-align: center;
     color: var(--outgoing-chat-border);
     width: auto;
-	  white-space: nowrap;
 	  white-space: nowrap;
     background: var(--outgoing-chat-bg);
     border: 1px solid var(--outgoing-chat-bg);

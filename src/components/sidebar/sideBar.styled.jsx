@@ -10,7 +10,8 @@ export const MyTag = styled.button.attrs(props => ({
 
 export const ContainerCss = styled.div`
   position: fixed;
-  padding: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
   top: 0;
   left: 0;
   width: 100vw;
@@ -30,6 +31,10 @@ export const ContainerCss = styled.div`
   }
 `;
 
+export const BoxSt = styled.div`
+  display: block;
+`;
+
 export const NavBoxCss = styled.ul`
   display: flex;
   flex-direction: row;
@@ -38,6 +43,7 @@ export const NavBoxCss = styled.ul`
   align-items: start;
   flex: 1 1 0%;
   background: inherit;
+ margin-bottom: 24px;
 
 
   @media (max-width: 767px) {
@@ -53,7 +59,7 @@ export const ToolTipCss = styled.div`
   background: var(--outgoing-chat-border);
   color: var(--outgoing-chat-bg);
   padding: 10px 20px;
-  font-size: 14px;
+  font-size: 12px;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.2s, visibility 0.2s;
@@ -61,7 +67,6 @@ export const ToolTipCss = styled.div`
   box-shadow: 0 0 3px rgba(56, 54, 54, 0.86);
   z-index:1300;
   width: auto;
-	white-space: nowrap;
 	white-space: nowrap;
   border: 1px solid var(--outgoing-chat-bg);
   border-radius: 6px;
@@ -75,6 +80,7 @@ export const NavBoxItemsCss = styled.li`
   gap: 12px;
   align-items: center;
   text-align: center;
+  white-space: nowrap;
   color: var(--outgoing-chat-bg);
   cursor: pointer;
   background: inherit;
@@ -94,23 +100,6 @@ export const NavBoxItemsCss = styled.li`
     color: var(--outgoing-chat-bg);
     position: relative;
   }
-  /* & span:hover::after{
-    content: attr(data-title);
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 46px;
-    height: 16px;
-    z-index: 100;
-    background: var(--outgoing-chat-border);
-    color: var(--outgoing-chat-bg);
-    font-size: 12px;
-    padding: 5px;
-    border: 1px solid var(--outgoing-chat-bg);
-    border-radius: 5px;
-    }
-  } */
   
   & p {
     font-size: 12px;
@@ -124,3 +113,4 @@ export const NavBoxItemsCss = styled.li`
     flex-grow: 0.6;
   }
 `;
+
