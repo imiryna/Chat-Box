@@ -1,9 +1,9 @@
 import React from 'react';
 import {
   ChatContainerCss,
-  IncomingMessageCss,
-  OutgoingMessageCss,
-  BoxMessageCss,
+  // IncomingMessageCss,
+  // OutgoingMessageCss,
+  // BoxMessageCss,
   ChatWrap,
   // ChatCss,
   // AvatarCss,
@@ -11,7 +11,7 @@ import {
 import { UploadSection } from 'components/uploadSection/uploadSection';
 
 export const ChatContainer = ({
-  messagesList,
+  // messagesList,
   showUpload,
   changeShowUpload,
 }) => {
@@ -41,28 +41,28 @@ export const ChatContainer = ({
   );
 };
 
-const MessageChat = ({ author, id, text, dateTime }) => {
-  switch (author) {
-    case 'user':
-      return (
-        <OutgoingMessageCss id={id}>
-          <BoxMessageCss>
-            <img src="../../images/user.jpg" alt="avatars" />
-            <p> {text}</p>
-          </BoxMessageCss>
-        </OutgoingMessageCss>
-      );
+// const MessageChat = ({ author, id, text, dateTime }) => {
+//   switch (author) {
+//     case 'user':
+//       return (
+//         <OutgoingMessageCss id={id}>
+//           <BoxMessageCss>
+//             <img src="../../images/user.jpg" alt="avatars" />
+//             <p> {text}</p>
+//           </BoxMessageCss>
+//         </OutgoingMessageCss>
+//       );
 
-    case 'openai':
-      return (
-        <IncomingMessageCss id={id}>
-          <div className="chat-info">
-            <img src="../../images/chatbot.jpg" alt="user avatar" />
-            <p>ChatGPT: {text}</p>
-          </div>
-        </IncomingMessageCss>
-      );
-    default:
-      console.log('wrong user name');
-  }
-};
+//     case 'openai':
+//       return (
+//         <IncomingMessageCss id={id}>
+//           <div className="chat-info">
+//             <img src="../../images/chatbot.jpg" alt="user avatar" />
+//             <p>ChatGPT: {text}</p>
+//           </div>
+//         </IncomingMessageCss>
+//       );
+//     default:
+//       console.log('wrong user name');
+//   }
+// };
