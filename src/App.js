@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { WrapperCss, WrapperChatCss } from 'App.styled.jsx';
+import { WrapperCss, WrapperChatCss, OpenUploadSectionCss, ToolTipCss  } from 'App.styled.jsx';
 import { Navigation } from 'components/navigation/navigation.jsx';
 import { TypingBox } from 'components/typingBox/typingBox.jsx';
 import { SideBar } from 'components/sidebar/sideBar.jsx';
@@ -70,6 +70,10 @@ export const App = () => {
     setMessageStack(messageStack => messageStack.filter(chat => chat.id !== removedId));
   };
 
+  const openUploadBar = () => {
+    changeShowUpload(true);
+  };
+
   return (
     <>
         <WrapperCss>
@@ -83,6 +87,10 @@ export const App = () => {
         </WrapperCss>
         <Navigation id="nav" changeShowSidebar={changeShowSidebar} />
         <WrapperChatCss id="wrapper">
+        <OpenUploadSectionCss onClick={openUploadBar} data-title='Open upload'>
+          <span >&#128386;</span>
+          <ToolTipCss>Open upload section</ToolTipCss>
+        </OpenUploadSectionCss>
         <ChatContainer
           id="chatcontainer"
           messagesList={messageStack}

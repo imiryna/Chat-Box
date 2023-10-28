@@ -5,6 +5,9 @@ import {
   // OutgoingMessageCss,
   // BoxMessageCss,
   ChatWrap,
+  // OpenUploadSectionCss,
+  // BtnBox,
+  // ToolTipCss,
   // ChatCss,
   // AvatarCss,
 } from './chatContainer.styled';
@@ -15,6 +18,10 @@ export const ChatContainer = ({
   showUpload,
   changeShowUpload,
 }) => {
+  // const openModal = () => {
+  //   changeShowUpload(true);
+  // };
+
   return (
     <ChatWrap>
       <UploadSection
@@ -22,11 +29,11 @@ export const ChatContainer = ({
         changeShowUpload={changeShowUpload}
       />
       <ChatContainerCss>
-        {/* <BtnBox>
-        <OpenSideBarCss onClick={openModal} data-title='Open sidebar'>
+        {/* <BtnBox> */}
+        {/* <OpenUploadSectionCss onClick={openModal} data-title='Open upload'>
           <span >&#128386;</span>
-          <ToolTipCss>Open sidebar</ToolTipCss>
-        </OpenSideBarCss> */}
+          <ToolTipCss>Open upload section</ToolTipCss>
+        </OpenUploadSectionCss> */}
         {/* {messagesList.map(message => (
           <MessageChat
             author={message.author}

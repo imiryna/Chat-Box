@@ -6,7 +6,7 @@ export const DocumentComtCss = styled.div`
   position: absolute;
    top: 0;
   right: 0; 
-  padding: 67px 8px 10px;
+  padding: 85px 8px 10px;
   width: 100vw;
   height: 100vh;
   /* display: ${props => props.showmodal || 'none'}; */
@@ -28,9 +28,9 @@ export const DocumentComtCss = styled.div`
 `;
 export const ToolTipCss = styled.div`
  position: absolute;
-  top: 10%;
+  top: 13%;
   right: 102%;
-  background: var(--outgoing-chat-border);
+  background: #051937;
   color: var(--outgoing-chat-bg);
   padding: 10px 20px;
   font-size: 12px;
@@ -43,26 +43,35 @@ export const ToolTipCss = styled.div`
   z-index: 6; // igor tooltip
   width: auto;
 	white-space: nowrap;
-  border: 1px solid var(--outgoing-chat-bg);
+  border: 1px solid inherit;
   border-radius: 6px;
 `;
 
 export const ButtonBoxCss = styled.div`
 display: flex;
-  height: 40px;
-  width:40px;
-  padding: 4px 12px;
+  height: 36px;
+  width:38px;
+  padding: 4px 10px;
   flex-direction: row;
-  gap: 12px;
   align-items: center;
   text-align: center;
   white-space: nowrap;
   color: var(--outgoing-chat-bg);
-  cursor: pointer;
   background: inherit;
-  border: 1px solid var(--icon-color);
   border-radius: 6px;
-  /* user-select: none; */
+  background: var(--placeholder-color);
+  border: 1px solid var(--placeholder-color);
+
+  border: 1px solid var(--outgoing-chat-bg);
+  /* user-select: none; var(--outgoing-chat-bg)*/
+
+  &:hover {
+    background: var( --outgoing-chat-bg);
+    border: 1px solid var( --outgoing-chat-bg);
+    
+  
+
+  }
 
   // hover to show tooltip
   &:hover ${ToolTipCss} {

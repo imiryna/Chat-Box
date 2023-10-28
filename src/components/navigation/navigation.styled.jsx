@@ -72,14 +72,14 @@ export const OpenSideBarCss = styled.div`
 
   @media (min-width: 768px) {
     position: absolute;
-    top: 2%;
+    top: 20%;
     left: 2%;
     /* z-index: 200; */
     z-index: 4; // igor 
     display: flex;
-    padding: 10px 12px;
+    padding: 8px 10px;
     flex-direction: row;
-    gap: 12px;
+    /* gap: 12px; */
     align-items: center;
     text-align: center;
     /* color: var(--outgoing-chat-border); */

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ChatWrap = styled.div`
   display: block;
   position: relative;
- 
+  /* z-index:1; */
 `;
 
 export const ChatContainerCss = styled.div`
@@ -30,19 +30,19 @@ export const ChatContainerCss = styled.div`
   }
 `;
 
-// export const BtnBox = styled.div`
-//   margin-left: 0;
+export const BtnBox = styled.div`
+//   margin-right: 0;
 
-//   @media (min-width: 768px) {
-//     margin-left: 300px;
-//     margin-right: 90px;
-//   }
+   @media (min-width: 768px) {
+     margin-left: 300px;
+     margin-right: 90px;
+   }
 
-//   @media (min-width: 1200px) {
-//     margin-left: 344px;
-//     margin-right: 144px;
-//   }
-// `;
+  @media (min-width: 1200px) {
+    margin-left: 344px;
+    margin-right: 144px;
+   }
+ `;
 
 export const ChatCss = styled.div`
   display: flex;
