@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
 export const WrapperCss = styled.div`
-  
-   display: flex;
-    width: 244px
-    padding: 8px;
+   /* display: flex; */
+    width: 244px;
+   
 
-  @media (min-width: 768px);
-   {
+  @media (min-width: 768px){
+  
    
   }
 `;

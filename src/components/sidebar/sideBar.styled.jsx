@@ -10,23 +10,31 @@ export const MyTag = styled.button.attrs(props => ({
 
 export const ContainerCss = styled.div`
   position: fixed;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding: 15px 8px 8px;
+ 
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   display: ${props => props.showmodal || 'none'};
-  background: var(--outgoing-chat-border);
-  z-index: 1200;
+  /* background: var(--outgoing-chat-border);*/
+  /* background: rgb(107,74,158);
+background: radial-gradient(circle, rgba(107,74,158,1) 4%, rgba(4,10,17,0.9878545168067226) 51%);  */
+
+  background: #051937;
+
+  /* z-index: 1200; */
+  z-index: 4; // igor sidebar
 
   @media (min-width: 768px) {
-    padding: 8px;
+   
     height: 100vh;
     width: 244px;
     position: fixed;
-    background: var(--outgoing-chat-border);
-    /* overflow: auto; */
+    /* background: var(--outgoing-chat-border); */
+
+   
+   
     display: ${props => props.showmodal || "flex"};
   }
 `;
@@ -38,10 +46,10 @@ export const BoxSt = styled.div`
 export const NavBoxCss = styled.ul`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  gap: 20px;
+  /* justify-content: space-between; */
+  gap: 10px;
   align-items: start;
-  flex: 1 1 0%;
+  /* flex: 1 1 0%; */
   background: inherit;
  margin-bottom: 24px;
 
@@ -54,9 +62,9 @@ export const NavBoxCss = styled.ul`
 
 export const ToolTipCss = styled.div`
  position: absolute;
-  top: 2%;
-  left: 102%;
-  background: var(--outgoing-chat-border);
+  top: 17px;
+  left: 101%;
+  background: #051937;
   color: var(--outgoing-chat-bg);
   padding: 10px 20px;
   font-size: 12px;
@@ -65,7 +73,8 @@ export const ToolTipCss = styled.div`
   transition: opacity 0.2s, visibility 0.2s;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 0 3px rgba(56, 54, 54, 0.86);
-  z-index:1300;
+  /* z-index:1300; */
+  z-index: 6; // igor tooltip
   width: auto;
 	white-space: nowrap;
   border: 1px solid var(--outgoing-chat-bg);
@@ -86,7 +95,7 @@ export const NavBoxItemsCss = styled.li`
   background: inherit;
   border: 1px solid var(--icon-color);
   border-radius: 6px;
-  user-select: none;
+  /* user-select: none; */
 
   // hover to show tooltip
   &:hover ${ToolTipCss} {
@@ -108,9 +117,13 @@ export const NavBoxItemsCss = styled.li`
   }
 
   @media (max-width: 768px) {
-    flex-grow: 2;
+    /* flex-grow: 2;
     flex-grow: 3;
-    flex-grow: 0.6;
+    flex-grow: 0.6; */
   }
 `;
 
+export const HistiryWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+`;

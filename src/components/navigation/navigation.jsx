@@ -3,18 +3,27 @@ import {
   HambrgMenuCss,
   TitleCss,
   IconPlasCss,
+  BtnBox,
+  OpenSideBarCss,
+  ToolTipCss,
 } from './navigation.styled';
 import React from 'react';
 
-export const Navigation = ({ changeShowModal }) => {
+export const Navigation = ({ changeShowSidebar }) => {
   const openModal = () => {
-    changeShowModal(true);
+    changeShowSidebar(true);
   };
 
   return (
     <NavBoxCss>
       <HambrgMenuCss onClick={openModal}>&#x2630;</HambrgMenuCss>
-      <TitleCss> New chat</TitleCss>
+      <BtnBox>
+        <OpenSideBarCss onClick={openModal} data-title='Open sidebar'>
+          <span >&#128386;</span>
+          <ToolTipCss>Open sidebar</ToolTipCss>
+        </OpenSideBarCss>
+        </BtnBox> 
+      <TitleCss> Logo</TitleCss>
       <IconPlasCss>&#65291;</IconPlasCss>
     </NavBoxCss>
   );

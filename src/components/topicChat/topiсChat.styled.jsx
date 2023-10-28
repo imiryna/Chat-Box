@@ -12,16 +12,19 @@ export const TopiсBoxCss = styled.div`
   font-size: 12px;
   white-space: nowrap;
   color: var(--outgoing-chat-bg);
-  margin-right: 8px;
+  /* margin-right: 8px; */
   margin-bottom:24px;
-  border: 1px solid var(--outgoing-chat-border);
+  border: 1px solid rgba(5,25,55,1);
   border-radius: 6px;
 
   &:hover{
-    background: var(--incoming-chat-bg);
+    background: radial-gradient(circle, rgba(27,163,196,1) 0%, rgba(5,25,55,1) 100%), border-box;
+    border-radius: 6px;
   }
   &:active{
-    background: var(--incoming-chat-bg);
+    border: 1px solid;
+    background: linear-gradient(309deg, rgba(27,163,196,1) 0%, rgba(5,25,55,1) 41%), border-box;
+    border-radius: 6px;
   }
 `;
 export const SpanSt = styled.span`

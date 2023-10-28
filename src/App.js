@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { WrapperCss } from './App.styled.jsx';
-import { Navigation } from './components/navigation/navigation.jsx';
-import { TypingBox } from './components/typingBox/typingBox.jsx';
-import { SideBar } from './components/sidebar/sideBar.jsx';
-import { ChatContainer } from './components/chatContainer/chatContainer.jsx';
+import { WrapperCss, WrapperChatCss } from 'App.styled.jsx';
+import { Navigation } from 'components/navigation/navigation.jsx';
+import { TypingBox } from 'components/typingBox/typingBox.jsx';
+import { SideBar } from 'components/sidebar/sideBar.jsx';
+import { ChatContainer } from 'components/chatContainer/chatContainer.jsx';
 import { nanoid } from 'nanoid';
+// import { UploadSection } from 'components/uploadSection/uploadSection.jsx';
 
 /** Stored message format:
  * {text: ...,
@@ -38,7 +39,8 @@ export const App = () => {
   //   messageId: 'fg45675',
   // },
 
-  const [showModal, setShowModal] = useState('');
+  const [showSidebar, setShowSidebar] = useState('');
+  const [showUpload, setShowUpload] = useState('');
 
   const addChat = newChatName => {
     setMessageStack([
@@ -54,8 +56,13 @@ export const App = () => {
   const addToMessageStack = newMessage => {
     setMessageStack(messageStack => [...messageStack, newMessage]);
   };
-  const changeShowModal = newState => {
-    setShowModal(newState);
+
+  const changeShowSidebar = newState => {
+    setShowSidebar(newState);
+  };
+
+  const changeShowUpload = newState => {
+    setShowUpload(newState);
   };
 
   const removeById = removedId => {
@@ -65,26 +72,27 @@ export const App = () => {
 
   return (
     <>
-      <div>
         <WrapperCss>
           <SideBar
-            toggleModal={changeShowModal}
-            showModal={showModal}
+            toggleSidebar={changeShowSidebar}
+            showSidebar={showSidebar}
             messageStack={messageStack}
             addChat={addChat}
             removeById={removeById}
           />
         </WrapperCss>
-        {/* <WrapperChatCss id="wrapper"> */}
-        <Navigation id="nav" changeShowModal={changeShowModal} />
+        <Navigation id="nav" changeShowSidebar={changeShowSidebar} />
+        <WrapperChatCss id="wrapper">
         <ChatContainer
           id="chatcontainer"
           messagesList={messageStack}
-          changeShowModal={changeShowModal}
+          changeShowSidebar={changeShowSidebar}
+          showUpload={showUpload}
+          changeShowUpload={changeShowUpload}
         />
         <TypingBox id="typingbox" addMessage={addToMessageStack} />
-        {/* </WrapperChatCss> */}
-      </div>
+        {/* <UploadSection/> */}
+        </WrapperChatCss>
     </>
   );
 };

@@ -22,3 +22,19 @@ export const fetchMessageChat = async userText => {
   const { data } = await axios.post(API_URL, requestData, paramsRequest);
   return data;
 };
+
+export const uploadFiles = async fileForUpload =>{
+  const url = 'https://httpbin.org/post';
+    const formData = new FormData();
+    formData.append('file', fileForUpload);
+    formData.append('fileName', fileForUpload.name);
+    const config = {
+      headers: {
+        'content-type': 'multipart/form-data',
+      },
+    };
+    axios.post(url, formData, config).then((response) => {
+      console.log(response.data);
+    });
+
+}

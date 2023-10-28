@@ -9,13 +9,13 @@ export const TextareaContainerCss = styled.div`
   padding-right: 16px;
 
   @media (min-width: 768px){
-    left: 300px;
+    left: 264px;
     width: 50%;
     
   }
 
   @media (min-width: 1200px){
-    left: 444px;
+    left: 344px;
     width: 50%;
   }
 `;

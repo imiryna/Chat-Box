@@ -5,15 +5,22 @@ import {
   NavBoxItemsCss,
   ToolTipCss,
   BoxSt,
+  HistiryWrap,
 } from './sideBar.styled';
 import { TopicChat } from 'components/topicChat/topiсChat';
 
-export const SideBar = ({ showModal, toggleModal, messageStack, addChat, removeById }) => {
+export const SideBar = ({
+  showSidebar,
+  toggleSidebar,
+  messageStack,
+  addChat,
+  removeById,
+}) => {
   let displayModal;
-  if (typeof showModal === 'boolean') {
-    displayModal = showModal ? 'flex' : 'none';
-  } else if (typeof showModal === 'string') {
-    displayModal = showModal;
+  if (typeof showSidebar === 'boolean') {
+    displayModal = showSidebar ? 'flex' : 'none';
+  } else if (typeof showSidebar === 'string') {
+    displayModal = showSidebar;
   }
 
   const generateChatName = listOfName => {
@@ -35,7 +42,7 @@ export const SideBar = ({ showModal, toggleModal, messageStack, addChat, removeB
   };
 
   const closeModal = () => {
-    toggleModal(false);
+    toggleSidebar(false);
   };
   return (
     <ContainerCss showmodal={displayModal}>
@@ -50,9 +57,16 @@ export const SideBar = ({ showModal, toggleModal, messageStack, addChat, removeB
             <ToolTipCss>Close sidebar</ToolTipCss>
           </NavBoxItemsCss>
         </NavBoxCss>
-        {messageStack.map(chat => (
-          <TopicChat key={chat.id} chatName={chat.name} removeById={removeById} chatId={chat.id}/>
-        ))}
+        <HistiryWrap>
+          {messageStack.map(chat => (
+            <TopicChat
+              key={chat.id}
+              chatName={chat.name}
+              removeById={removeById}
+              chatId={chat.id}
+            />
+          ))}
+        </HistiryWrap>
       </BoxSt>
     </ContainerCss>
   );
