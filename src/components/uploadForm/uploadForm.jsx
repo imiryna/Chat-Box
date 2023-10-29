@@ -25,7 +25,7 @@ export const UploadForm = ()=>{
     return (
         <form>
             <label htmlFor="file"> Choose a file</label>
-            <input id="file" type="file" onChange={handleChange}/>
+            <input id="file" type="file" accept=".pdf" onChange={handleChange}/>
             <button type="submit" onClick={handleSubmit}>Upload a file</button>
         </form>
     )

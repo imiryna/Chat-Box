@@ -6,7 +6,7 @@ export const DocumentComtCss = styled.div`
   position: absolute;
    top: 0;
   right: 0; 
-  padding: 85px 8px 10px;
+  padding: 75px 22px 10px 14px;
   width: 100vw;
   height: 100vh;
   /* display: ${props => props.showmodal || 'none'}; */
@@ -28,7 +28,7 @@ export const DocumentComtCss = styled.div`
 `;
 export const ToolTipCss = styled.div`
  position: absolute;
-  top: 13%;
+  top: 11%;
   right: 102%;
   background: #051937;
   color: var(--outgoing-chat-bg);
@@ -51,6 +51,7 @@ export const ButtonBoxCss = styled.div`
 display: flex;
   height: 36px;
   width:38px;
+  margin-bottom: 10px;
   padding: 4px 10px;
   flex-direction: row;
   align-items: center;
@@ -62,15 +63,11 @@ display: flex;
   background: var(--placeholder-color);
   border: 1px solid var(--placeholder-color);
 
-  border: 1px solid var(--outgoing-chat-bg);
-  /* user-select: none; var(--outgoing-chat-bg)*/
+  /* border: 1px solid var(--outgoing-chat-bg); */
 
   &:hover {
     background: var( --outgoing-chat-bg);
     border: 1px solid var( --outgoing-chat-bg);
-    
-  
-
   }
 
   // hover to show tooltip
@@ -85,22 +82,12 @@ display: flex;
     color: rgba(5,25,55,1);
     position: relative;
   }
-  /* var(--outgoing-chat-bg) */
   
   & p {
     font-size: 12px;
     color: var(--outgoing-chat-bg);
     margin-right: 60px;
   }
-`;
-
-
-export const FormCss = styled.form`
-font-size: 12px;
-    color: var(--outgoing-chat-bg);
-    margin-bottom: 20px;
-   
-
 `;
 
 export const ListDocWrapCss = styled.div`

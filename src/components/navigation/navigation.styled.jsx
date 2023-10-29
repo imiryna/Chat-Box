@@ -115,7 +115,7 @@ export const TitleCss = styled.h1`
     text-align: center;
     display: block;
     margin-right: auto;
-    margin-left: auto;
+    margin-left: 205px;
   }
 `;
 
