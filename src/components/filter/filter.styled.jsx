@@ -12,23 +12,22 @@ export const FormCss = styled.form`
 `;
 
 export const FilterButtonCss = styled.span`
+  display: block;
   position: absolute;
-  top:0;
-  right:0;
+  top: 7px;
+  right: 10px;
   text-align: center;
-  padding: 9px 16px;
-  font-size: 14px;
-  line-height: 25px;
+  padding: 5px 6px 3px;
   color: var(--outgoing-chat-bg);
-  background: rgba(5,25,55,1);
+  background: inherit;
   border: 1px solid var(--group-border);
-  border-radius: 0 6px 6px 0;
-  transition: background-image .3s ease;
+  border-radius: 50%;
+  transition: background .3s ease;
 
-  &:hover {
-     background-image: radial-gradient(circle, rgba(27,163,196,1) 0%, rgba(5,25,55,1) 100%);;
-     /* border-color: var(--group-border-focus); */
-    }
+   &:hover {
+     background: var(--placeholder-color);
+   }
+      
 
 `;
 
@@ -44,7 +43,7 @@ export const FilterInputCss = styled.input`
     color: rgba(5,25,55,1);
     border: 1px solid var(--icon-color);
     background: var(--input-background);
-    transition: border .3s ease;
+    transition: border 0.3s ease, border-color 0.3s ease;
     &::placeholder {
       color:  #53585f;;
       font-size: 12px;
@@ -63,4 +62,13 @@ export const FilterInputCss = styled.input`
       visibility: visible;
     }  
 
+`;
+
+export const SvgCss = styled.svg`
+  padding: 2px;
+  transition: stroke 0.3s ease;
+  
+  &:hover {
+    stroke: rgba(5,25,55,1);
+  }
 `;

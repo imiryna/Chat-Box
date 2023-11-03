@@ -1,5 +1,6 @@
 import {useState} from "react";
 import { uploadFiles } from "services/Api";
+import { FormCss, InputBoxCss, UploadBtnCss, InputCss } from "./uploadForm.styled";
 
 export const UploadForm = ()=>{
 
@@ -23,10 +24,12 @@ export const UploadForm = ()=>{
     }
 
     return (
-        <form>
-            <label htmlFor="file"> Choose a file</label>
-            <input id="file" type="file" accept=".pdf" onChange={handleChange}/>
-            <button type="submit" onClick={handleSubmit}>Upload a file</button>
-        </form>
+        <FormCss>
+            <InputBoxCss>
+                <label htmlFor="file"> </label>
+                <InputCss id="file" type="file" accept=".pdf" onChange={handleChange}/>
+            </InputBoxCss>
+            <UploadBtnCss type="submit" onClick={handleSubmit}>Upload a file</UploadBtnCss>
+        </FormCss>
     )
 }

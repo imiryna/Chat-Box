@@ -9,8 +9,6 @@ export const UploadSection = ({showUpload, changeShowUpload})=>{
   const [documents, setDocuments] = useState([]);
   const [filter, setFilter] = useState('');
 
-  
-
     let displayModal;
   if (typeof showUpload === 'boolean') {
     displayModal = showUpload ? 'flex' : 'none';
@@ -26,10 +24,7 @@ export const UploadSection = ({showUpload, changeShowUpload})=>{
     setDocuments(documents => documents.filter(document => document.id !== documentId)
     );
   };
-
-  const filteringDocuments = filteredList => {
-    setFilter([...filteredList])
-  };
+ 
 
     return(
         <DocumentComtCss showmodal={displayModal}>
@@ -37,12 +32,13 @@ export const UploadSection = ({showUpload, changeShowUpload})=>{
                 <span>&#128386;</span>
                 <ToolTipCss>Close upload</ToolTipCss>
             </ButtonBoxCss>
-            <Filter 
-              documentData={documents}
-              filteredDocuments={filteringDocuments}
+            <Filter
+              filterTerm={filter}
+              setFilter={setFilter}
             /> 
             <DocumentsList
-            documents={filter ? filter : documents} 
+            filterTerm={filter}
+            documents={documents}
             removeDocumentById={removeDocumentById}
             />
             <UploadBoxCss>

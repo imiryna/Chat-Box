@@ -9,9 +9,9 @@ export const ListDocWrapCss = styled.div`
     justify-content: start;
     padding: 10px 6px 6px;
     font-size: 12px;
-    outline: 1px solid var(--icon-color);
+    /* outline: 1px solid var(--icon-color); */
     border-radius: 6px;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
 `;
 
 export const DocumentBoxCss = styled.div`

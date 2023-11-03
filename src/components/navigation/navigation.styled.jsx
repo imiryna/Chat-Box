@@ -56,7 +56,7 @@ export const ToolTipCss = styled.div`
 
   color: var(--outgoing-chat-bg);
   padding: 10px 20px;
-  border: 1px solid var(--outgoing-chat-bg);
+  border: 1px solid transparent;
   border-radius: 5px;
   font-size: 12px;
   opacity: 0;
