@@ -28,7 +28,7 @@ export const InputCss = styled.input`
     font-size: 12px;
     font-weight: 400;
     font-family: inherit;
-    border-radius: 6px;
+    /* border-radius: 6px; */
     
     color:  rgba(5,25,55,1);
   
