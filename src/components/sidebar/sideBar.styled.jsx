@@ -1,17 +1,15 @@
 import styled from 'styled-components';
 
-
 export const MyTag = styled.button.attrs(props => ({
   title: props.myThisThingValue,
 }))`
   background: ${props => props.thisIsAlsoMyThing};
 `;
 
-
 export const ContainerCss = styled.div`
   position: fixed;
   padding: 15px 8px 8px;
- 
+
   top: 0;
   left: 0;
   width: 100vw;
@@ -21,11 +19,10 @@ export const ContainerCss = styled.div`
   z-index: 4;
 
   @media (min-width: 768px) {
-   
     height: 100vh;
     width: 244px;
     position: fixed;
-    display: ${props => props.showmodal || "flex"};
+    display: ${props => props.showmodal || 'flex'};
   }
 `;
 
@@ -36,22 +33,20 @@ export const BoxSt = styled.div`
 export const NavBoxCss = styled.ul`
   display: flex;
   flex-direction: row;
- 
+
   gap: 10px;
   align-items: start;
-  
-  background: inherit;
- margin-bottom: 24px;
 
+  background: inherit;
+  margin-bottom: 24px;
 
   @media (max-width: 767px) {
     gap: 95px;
   }
-
 `;
 
 export const ToolTipCss = styled.div`
- position: absolute;
+  position: absolute;
   top: 17px;
   left: 101%;
   background: #051937;
@@ -65,7 +60,7 @@ export const ToolTipCss = styled.div`
   box-shadow: 0 0 3px rgba(56, 54, 54, 0.86);
   z-index: 6;
   width: auto;
-	white-space: nowrap;
+  white-space: nowrap;
   border: 1px solid transparent;
   border-radius: 6px;
   transition: visibility 250ms ease-in-out;
@@ -99,7 +94,7 @@ export const NavBoxItemsCss = styled.li`
     color: var(--outgoing-chat-bg);
     position: relative;
   }
-  
+
   & p {
     font-size: 12px;
     color: var(--outgoing-chat-bg);
@@ -113,7 +108,7 @@ export const NavBoxItemsCss = styled.li`
   }
 `;
 
- export const HistiryWrap = styled.div`
+export const HistoryWrap = styled.div`
   display: flex;
   flex-direction: column;
 `;

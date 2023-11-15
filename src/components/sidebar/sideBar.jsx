@@ -1,21 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
+  BoxSt,
   ContainerCss,
+  HistoryWrap,
   NavBoxCss,
   NavBoxItemsCss,
   ToolTipCss,
-  BoxSt,
-  HistiryWrap,
 } from './sideBar.styled';
-import { TopicChat } from 'components/topicChat/topiсChat';
 
-export const SideBar = ({
-  showSidebar,
-  toggleSidebar,
-  messageStack,
-  addChat,
-  removeById,
-}) => {
+import { useSelector, useDispatch } from 'react-redux';
+import { selectChats } from 'Redux/selectors';
+import { getChatsThunk, createChatThunk } from 'Redux/chatComponentThunk';
+import { getSidebarVisibility, setSidebarVisibility } from 'Redux/modalSlice';
+
+import { ChatTopic } from 'components/chatTopic/chatTopic';
+
+export const SideBar = () => {
+  const showSidebar = useSelector(getSidebarVisibility);
+  // calculating state of sidebar (show/hide)
   let displayModal;
   if (typeof showSidebar === 'boolean') {
     displayModal = showSidebar ? 'flex' : 'none';
@@ -23,6 +25,22 @@ export const SideBar = ({
     displayModal = showSidebar;
   }
 
+  // dispatcher for calling thunks
+  const dispatcher = useDispatch();
+  const chats = useSelector(selectChats);
+
+  // update the list of the chats on component load
+  useEffect(() => {
+    dispatcher(getChatsThunk());
+  }, [dispatcher]);
+
+  /**
+   * Generate default chat name based on
+   * already listed. Take name "default"
+   * and add the first free number to it
+   * @param {string} listOfName
+   * @returns
+   */
   const generateChatName = listOfName => {
     let defaultName = 'Default';
     let returnName = defaultName;
@@ -36,14 +54,16 @@ export const SideBar = ({
     }
     return returnName;
   };
+
   const addTopicChat = () => {
-    const chatName = generateChatName(messageStack.map(chat => chat.name));
-    addChat(chatName);
+    const chatName = generateChatName(chats.map(chat => chat.name));
+    dispatcher(createChatThunk(chatName));
   };
 
-  const closeModal = () => {
-    toggleSidebar(false);
+  const closeSidebar = () => {
+    dispatcher(setSidebarVisibility(false));
   };
+
   return (
     <ContainerCss showmodal={displayModal}>
       <BoxSt>
@@ -52,21 +72,16 @@ export const SideBar = ({
             <span>&#9998;</span>
             <p>New Chat</p>
           </NavBoxItemsCss>
-          <NavBoxItemsCss onClick={closeModal} data-title="Close sidebar">
+          <NavBoxItemsCss onClick={closeSidebar} data-title="Close sidebar">
             <span>&#128386;</span>
             <ToolTipCss>Close sidebar</ToolTipCss>
           </NavBoxItemsCss>
         </NavBoxCss>
-        <HistiryWrap>
-          {messageStack.map(chat => (
-            <TopicChat
-              key={chat.id}
-              chatName={chat.name}
-              removeById={removeById}
-              chatId={chat.id}
-            />
+        <HistoryWrap>
+          {chats.map(chat => (
+            <ChatTopic key={chat.id} chatName={chat.name} chatId={chat.id} />
           ))}
-        </HistiryWrap>
+        </HistoryWrap>
       </BoxSt>
     </ContainerCss>
   );

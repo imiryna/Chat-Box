@@ -1,106 +1,44 @@
-import { useState } from 'react';
-import { WrapperCss, WrapperChatCss, OpenUploadSectionCss, ToolTipCss  } from 'App.styled.jsx';
-import { Navigation } from 'components/navigation/navigation.jsx';
-import { TypingBox } from 'components/typingBox/typingBox.jsx';
-import { SideBar } from 'components/sidebar/sideBar.jsx';
-import { ChatContainer } from 'components/chatContainer/chatContainer.jsx';
-import { nanoid } from 'nanoid';
-// import { UploadSection } from 'components/uploadSection/uploadSection.jsx';
+import { lazy, Suspense, useEffect } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { Navigation } from 'components/navigation/navigation';
+import { useDispatch, useSelector } from 'react-redux';
+import { refreshUserThunk } from 'Redux/authThunk';
+import { selectAuthenticated } from 'Redux/authSelector';
 
-/** Stored message format:
- * {text: ...,
- * author: user || openAI,
- * timestamp: ...,}
- */
+const Home = lazy(() => import('pages/homePage'));
+const Login = lazy(() => import('pages/loginPage'));
+const Register = lazy(() => import('pages/registerPage'));
+
 export const App = () => {
-  const [messageStack, setMessageStack] = useState([{
-      name:  'Default',
-      id: nanoid(),
-      message: [],
-    },]
-    
-  );
-  // {
-  //   text: 'loresdf gbjsdhbck sdjnc jsnvl jbhj bvhbdkcn viherb vijdnc jdhbvhebvu',
-  //   author: 'user',
-  //   timestamp: '1234567890',
-  //   messageId: 'fg45673',
-  // },
-  // {
-  //   text: 'lores dfgb js dhbcksdjn cjsn vljbhj bvhbd kcnvihe rbvijd ncjdhb vhebvu',
-  //   author: 'openai',
-  //   timestamp: '1234567890',
-  //   messageId: 'fg45674',
-  // },
-  // {
-  //   text: 'loresdfgbjsdhbcksdjncjsnvljbhjbvhbdkcnviherbvijdncjdhbvhebvu',
-  //   author: 'user',
-  //   timestamp: '1234567890',
-  //   messageId: 'fg45675',
-  // },
+  const dispatch = useDispatch();
+  const authed = useSelector(selectAuthenticated);
 
-  const [showSidebar, setShowSidebar] = useState('');
-  const [showUpload, setShowUpload] = useState('');
-
-  const addChat = newChatName => {
-    setMessageStack([
-      ...messageStack,
-      {
-        name: newChatName,
-        id: nanoid(),
-        message: [],
-      },
-    ]);
-  };
-
-  const addToMessageStack = newMessage => {
-    setMessageStack(messageStack => [...messageStack, newMessage]);
-  };
-
-  const changeShowSidebar = newState => {
-    setShowSidebar(newState);
-  };
-
-  const changeShowUpload = newState => {
-    setShowUpload(newState);
-  };
-
-  const removeById = removedId => {
-    
-    setMessageStack(messageStack => messageStack.filter(chat => chat.id !== removedId));
-  };
-
-  const openUploadBar = () => {
-    changeShowUpload(true);
-  };
+  useEffect(() => {
+    dispatch(refreshUserThunk());
+  }, [dispatch]);
 
   return (
     <>
-        <WrapperCss>
-          <SideBar
-            toggleSidebar={changeShowSidebar}
-            showSidebar={showSidebar}
-            messageStack={messageStack}
-            addChat={addChat}
-            removeById={removeById}
+      <Suspense>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              !authed ? <Navigate replace to="/login" /> : <Navigation />
+            }
+          >
+            <Route index element={<Home />} />
+          </Route>
+          <Route
+            path="/register"
+            element={authed ? <Navigate replace to="/" /> : <Register />}
           />
-        </WrapperCss>
-        <Navigation id="nav" changeShowSidebar={changeShowSidebar} />
-        <WrapperChatCss id="wrapper">
-        <OpenUploadSectionCss onClick={openUploadBar} data-title='Open upload'>
-          <span >&#128386;</span>
-          <ToolTipCss>Open upload section</ToolTipCss>
-        </OpenUploadSectionCss>
-        <ChatContainer
-          id="chatcontainer"
-          messagesList={messageStack}
-          changeShowSidebar={changeShowSidebar}
-          showUpload={showUpload}
-          changeShowUpload={changeShowUpload}
-        />
-        <TypingBox id="typingbox" addMessage={addToMessageStack} />
-        {/* <UploadSection/> */}
-        </WrapperChatCss>
+          <Route
+            path="/login"
+            element={authed ? <Navigate replace to="/" /> : <Login />}
+          />
+        </Routes>
+      </Suspense>
     </>
   );
 };

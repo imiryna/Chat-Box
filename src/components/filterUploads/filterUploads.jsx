@@ -1,18 +1,23 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { setUploadsFilter } from 'Redux/filterUploadsSlice';
 import {
   FormCss,
   FilterButtonCss,
   FilterInputCss,
   SvgCss,
-} from './filter.styled';
+} from './filterUploads.styled';
 
-export const Filter = ({ filterTerm, setFilter }) => {
+export const FilterUploads = () => {
+  // dispatcher for calling thunks
+  const dispatcher = useDispatch();
+
   const handleInputFilter = e => {
-    setFilter(e.target.value);
+    dispatcher(setUploadsFilter(e.target.value));
   };
 
   const handleReset = () => {
-    setFilter('');
+    dispatcher(setUploadsFilter(''));
   };
 
   return (
@@ -21,7 +26,6 @@ export const Filter = ({ filterTerm, setFilter }) => {
         <XCircle />
       </FilterButtonCss>
       <FilterInputCss
-        value={filterTerm}
         onChange={handleInputFilter}
         id="upload-find-document"
         type="text"

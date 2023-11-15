@@ -1,16 +1,20 @@
 import { useState } from 'react';
-import * as API from '../../services/Api';
 import { nanoid } from 'nanoid';
 
 import {
   TextareaCss,
   TypingButtonCss,
-  TextareaContainerCss
+  TextareaContainerCss,
 } from './typingBox.styled';
 
-export const TypingBox = ({ addMessage }) => {
+import { sendMessageThunk } from 'Redux/chatComponentThunk';
+import { useDispatch } from 'react-redux';
+
+export const TypingBox = () => {
   const [message, setMessage] = useState('');
- 
+
+  const dispatcher = useDispatch();
+
   const createMessageObj = (text, author) => {
     return {
       text: text,
@@ -19,15 +23,14 @@ export const TypingBox = ({ addMessage }) => {
       messageId: nanoid(),
     };
   };
-  const inputReset = ()=>{
+  const inputReset = () => {
     setMessage('');
-  }
+  };
 
   const getInputValue = e => {
     setMessage(e.target.value);
-
   };
- 
+
   const handleKeyPressed = e => {
     if (e.key === 'Enter') {
       handleOutputMessage();
@@ -41,16 +44,8 @@ export const TypingBox = ({ addMessage }) => {
     const inputMessage = message;
     inputReset();
     // add user message to messageStack of App component
-    addMessage(createMessageObj(inputMessage, 'user'));
-
-    try {
-      const {choices} = await API.fetchMessageChat(inputMessage.trim());
-      const answer = choices[0].text.trim();
-      addMessage(createMessageObj(answer, 'openai'))
-    } catch (error) {
-      
-    }     
-   };
+    dispatcher(sendMessageThunk(createMessageObj(inputMessage, 'user')));
+  };
 
   return (
     <TextareaContainerCss>
@@ -71,7 +66,5 @@ export const TypingBox = ({ addMessage }) => {
         <span>&#10147;</span>
       </TypingButtonCss>
     </TextareaContainerCss>
-  
-   
   );
 };
