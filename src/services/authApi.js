@@ -19,8 +19,7 @@ export const userLogin = async formData => {
   return data;
 };
 
-export const userLogout = async token => {
-  //   setToken(token);
+export const userLogout = async () => {
   const { data } = await interactiveChatInstance.post('/users/logout');
   return data;
 };

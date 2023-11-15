@@ -16,20 +16,7 @@ const chatComponentSlice = createSlice({
 
   initialState: {
     currentChat: null,
-    messageStack: [
-      {
-        text: 'loresdf gbjsdhbck sdjnc jsnvl jbhj bvhbdkcn viherb vijdnc jdhbvhebvu',
-        author: 'user',
-        timestamp: '1234567890',
-        messageId: 'fg45673',
-      },
-      {
-        text: 'lores dfgb js dhbcksdjn cjsn vljbhj bvhbd kcnvihe rbvijd ncjdhb vhebvu',
-        author: 'openai',
-        timestamp: '1234567890',
-        messageId: 'fg45674',
-      },
-    ],
+    messageStack: [],
     error: null,
   },
 

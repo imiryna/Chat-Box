@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const modalInitialState = {
-  sidebar: 'none',
-  upload: false,
+  sidebar: '',
+  upload: '',
 };
 
 const modalSlice = createSlice({

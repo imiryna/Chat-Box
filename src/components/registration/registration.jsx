@@ -8,9 +8,8 @@ import {
   InputCss,
   LabelCss,
   Button,
+  LinkCss,
 } from './registration.styled';
-
-import { Link } from 'react-router-dom';
 
 export const Registration = () => {
   const {
@@ -50,7 +49,7 @@ export const Registration = () => {
         </LabelCss>
 
         <Button type="submit">Sign up</Button>
-        <Link to="/login">Already have an account? Login!</Link>
+        <LinkCss to="/login">Already have an account? Login!</LinkCss>
       </FormCss>
     </Container>
   );

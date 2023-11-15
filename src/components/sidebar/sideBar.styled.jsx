@@ -12,20 +12,21 @@ export const ContainerCss = styled.div`
 
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 90vw;
   height: 100vh;
   display: ${props => props.showmodal || 'none'};
   background: #051937;
   z-index: 4;
 
   @media (min-width: 768px) {
+    padding: 15px 8px 8px;
     height: 100vh;
-    width: 244px;
+    width: 230px;
     position: fixed;
     display: ${props => props.showmodal || 'flex'};
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 906px) {
     height: 100vh;
     width: 244px;
     position: fixed;
@@ -48,7 +49,7 @@ export const NavBoxCss = styled.ul`
   margin-bottom: 24px;
 
   @media (max-width: 767px) {
-    gap: 95px;
+    gap: 45px;
   }
 `;
 
@@ -101,17 +102,15 @@ export const NavBoxItemsCss = styled.li`
     color: var(--outgoing-chat-bg);
     position: relative;
   }
+`;
 
-  & p {
-    font-size: 12px;
-    color: var(--outgoing-chat-bg);
+export const TextCss = styled.p`
+  font-size: 12px;
+  color: var(--outgoing-chat-bg);
+  margin-right: 52px;
+
+  @media (min-width: 770px) {
     margin-right: 60px;
-  }
-
-  @media (max-width: 768px) {
-    /* flex-grow: 2;
-    flex-grow: 3;
-    flex-grow: 0.6; */
   }
 `;
 

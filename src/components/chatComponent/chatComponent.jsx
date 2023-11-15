@@ -14,15 +14,6 @@ import { setUploadVisibility } from 'Redux/modalSlice';
 export const ChatComponent = () => {
   const dispatcher = useDispatch();
 
-  // local state for modal windows
-  // const [showSidebar, setShowSidebar] = useState('');
-  // const [showUpload, setShowUpload] = useState('');
-
-  // local function for opening/closing sidebar and upload panels
-  // const changeShowSidebar = newState => {
-  //   setShowSidebar(newState);
-  // };
-
   const openUploadBar = () => {
     dispatcher(setUploadVisibility(true));
   };
@@ -40,7 +31,6 @@ export const ChatComponent = () => {
         </OpenUploadSectionCss>
         <ChatContent id="chatcontainer" />
         <TypingBox id="typingbox" />
-        {/* <UploadSection/> */}
       </WrapperChatCss>
     </>
   );

@@ -6,6 +6,7 @@ import {
   NavBoxCss,
   NavBoxItemsCss,
   ToolTipCss,
+  TextCss,
 } from './sideBar.styled';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -70,7 +71,7 @@ export const SideBar = () => {
         <NavBoxCss>
           <NavBoxItemsCss onClick={addTopicChat}>
             <span>&#9998;</span>
-            <p>New Chat</p>
+            <TextCss>New Chat</TextCss>
           </NavBoxItemsCss>
           <NavBoxItemsCss onClick={closeSidebar} data-title="Close sidebar">
             <span>&#128386;</span>

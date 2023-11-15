@@ -1,4 +1,29 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+
+export const LinkCss = styled(NavLink)`
+  padding: 8px 10px;
+  font: inherit;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  color: #cfcaca;
+  font-size: 17px;
+  background-image: linear-gradient(
+    31deg,
+    rgba(27, 163, 196, 1) 0%,
+    rgba(5, 25, 55, 1) 41%
+  );
+  transition: all 250ms;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    border: 1px solid #dcd5d5;
+    cursor: pointer;
+  }
+`;
+
 export const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -7,7 +32,7 @@ export const Container = styled.div`
 export const FormCss = styled.form`
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 300px;
   padding: 12px;
   font-weight: 500;
   background-color: #ecf4f8;
@@ -16,6 +41,10 @@ export const FormCss = styled.form`
     1px 4px 6px rgba(0, 0, 0, 0.16);
   border-radius: 8px;
   margin-top: 40px;
+
+  @media (min-width: 640) {
+    width: 400px;
+  }
 `;
 export const InputCss = styled.input`
   margin-top: 15px;
@@ -50,6 +79,7 @@ export const Button = styled.button`
   border: 1px solid transparent;
   color: #cfcaca;
   font-size: 20px;
+  margin-bottom: 18px;
   background-image: linear-gradient(
     31deg,
     rgba(27, 163, 196, 1) 0%,

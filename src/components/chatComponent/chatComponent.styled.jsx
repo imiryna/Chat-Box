@@ -47,8 +47,7 @@ export const OpenUploadSectionCss = styled.div`
     position: absolute;
     top: 12%;
     right: 2%;
-    /* z-index: 200; */
-    z-index: 2; // igor
+    z-index: 2;
     display: flex;
     padding: 8px 10px;
     flex-direction: row;

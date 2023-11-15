@@ -5,6 +5,7 @@ import {
   TextareaCss,
   TypingButtonCss,
   TextareaContainerCss,
+  SpanCss,
 } from './typingBox.styled';
 
 import { sendMessageThunk } from 'Redux/chatComponentThunk';
@@ -43,7 +44,6 @@ export const TypingBox = () => {
     }
     const inputMessage = message;
     inputReset();
-    // add user message to messageStack of App component
     dispatcher(sendMessageThunk(createMessageObj(inputMessage, 'user')));
   };
 
@@ -63,7 +63,7 @@ export const TypingBox = () => {
         id="send-btn"
         className="material-symbols-rounded"
       >
-        <span>&#10147;</span>
+        <SpanCss>&#10148;</SpanCss>
       </TypingButtonCss>
     </TextareaContainerCss>
   );

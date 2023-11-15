@@ -8,7 +8,6 @@ import {
   BtnBox,
   OpenSideBarCss,
   ToolTipCss,
-  OpenUploadCss,
   Button,
 } from './navigation.styled';
 
@@ -47,12 +46,29 @@ export const Navigation = () => {
         </BtnBox>
         <TitleCss> Logo</TitleCss>
         <Button onClick={handleLogout}>Logout</Button>
-        <OpenUploadCss onClick={openSidebar} data-title="Open sidebar">
-          <IconPlasCss onClick={openUpload}>&#65291;</IconPlasCss>
-          <ToolTipCss>Open upload</ToolTipCss>
-        </OpenUploadCss>
+        <IconPlasCss onClick={openUpload}>
+          <Layout6 />
+        </IconPlasCss>
       </NavBoxCss>
       <Outlet />
     </>
   );
 };
+
+const Layout6 = ({ size = 24, color = '#ffffff' }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={color}
+    strokeWidth="1"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect x="3" y="3" width="18" height="18" rx="2" />
+    <path d="M15 3v18" />
+  </svg>
+);
+export default Layout6;

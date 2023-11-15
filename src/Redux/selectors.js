@@ -2,7 +2,6 @@ import { createSelector } from '@reduxjs/toolkit';
 
 // chat selectors
 export const selectChats = state => state.chat.messageStack;
-// export const selectFilter = state => state.filter;
 export const selectError = state => state.chat.error;
 export const selectCurrentChat = state => state.chat.currentChat;
 export const selectMessagesById = createSelector(

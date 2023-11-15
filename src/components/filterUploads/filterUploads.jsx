@@ -29,7 +29,7 @@ export const FilterUploads = () => {
         onChange={handleInputFilter}
         id="upload-find-document"
         type="text"
-        placeholder="Serch file"
+        placeholder="Search file"
       />
     </FormCss>
   );

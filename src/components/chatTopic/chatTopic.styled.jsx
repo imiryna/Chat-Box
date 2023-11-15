@@ -105,7 +105,12 @@ export const TopiсBoxCss = styled.div`
       ),
       border-box;
   }
+
+  @media (min-width: 640px) {
+    width: 99%;
+  }
 `;
+
 export const SpanSt = styled.span`
   border: 1px solid transparent;
   border-radius: 6px;
@@ -113,7 +118,7 @@ export const SpanSt = styled.span`
 
   position: absolute;
   top: -4px;
-  right: 2%;
+  right: 0;
 `;
 
 export const SvgCss = styled.svg`

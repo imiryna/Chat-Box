@@ -1,5 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-// import { contactsReducer } from 'Redux/contactsSlice';
 import { filterUploadsReducer } from 'Redux/filterUploadsSlice';
 import { authReducer } from 'Redux/authSlice';
 import { modalReducer } from 'Redux/modalSlice';

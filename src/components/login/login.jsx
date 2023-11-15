@@ -2,9 +2,14 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { loginThunk } from 'Redux/authThunk';
-import { Container, FormCss, InputCss, LabelCss, Button } from './login.styled';
-
-import { Link } from 'react-router-dom';
+import {
+  Container,
+  FormCss,
+  InputCss,
+  LabelCss,
+  Button,
+  LinkCss,
+} from './login.styled';
 
 export const Login = () => {
   const {
@@ -39,7 +44,7 @@ export const Login = () => {
         </LabelCss>
 
         <Button type="submit">Sign in</Button>
-        <Link to="/register">Have no account? Click here</Link>
+        <LinkCss to="/register">Have no account? Click here</LinkCss>
       </FormCss>
     </Container>
   );

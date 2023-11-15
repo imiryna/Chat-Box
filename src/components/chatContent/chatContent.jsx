@@ -5,26 +5,19 @@ import {
   OutgoingMessageCss,
   BoxMessageCss,
   ChatWrap,
-  OpenUploadSectionCss,
   BtnBox,
-  ToolTipCss,
 } from './chatContent.styled';
 
 import { UploadSection } from 'components/uploadSection/uploadSection';
-
+import Chatbot from '../../images/chatbot.jpg';
 import { getCurrentChat } from 'Redux/chatComponentSlice';
 import { getMessagesThunk } from 'Redux/chatComponentThunk';
-import { setUploadVisibility } from 'Redux/modalSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectMessagesById } from 'Redux/selectors';
 
 export const ChatContent = () => {
   const dispatcher = useDispatch();
   const currentChat = useSelector(getCurrentChat);
-
-  const openModal = () => {
-    dispatcher(setUploadVisibility(true));
-  };
 
   useEffect(() => {
     dispatcher(getMessagesThunk(currentChat));
@@ -37,10 +30,6 @@ export const ChatContent = () => {
       <UploadSection />
       <ChatContainerCss>
         <BtnBox>
-          <OpenUploadSectionCss onClick={openModal} data-title="Open upload">
-            <span>&#128386;</span>
-            <ToolTipCss>Open upload section</ToolTipCss>
-          </OpenUploadSectionCss>
           {messagesList.map(message => (
             <MessageChat
               author={message.author}
@@ -60,7 +49,12 @@ const MessageChat = ({ author, id, text }) => {
       return (
         <OutgoingMessageCss id={id}>
           <BoxMessageCss>
-            <img src="../../images/user.jpg" alt="avatars" />
+            <img
+              src="../../images/user.jpg"
+              alt="avatars"
+              width={24}
+              height={24}
+            />
             <p> {text}</p>
           </BoxMessageCss>
         </OutgoingMessageCss>
@@ -69,10 +63,10 @@ const MessageChat = ({ author, id, text }) => {
     case 'openai':
       return (
         <IncomingMessageCss id={id}>
-          <div className="chat-info">
-            <img src="../../images/chatbot.jpg" alt="user avatar" />
-            <p>ChatGPT: {text}</p>
-          </div>
+          <BoxMessageCss>
+            <img src={Chatbot} alt="" width={24} height={24} />
+            <p> {text}</p>
+          </BoxMessageCss>
         </IncomingMessageCss>
       );
     default:

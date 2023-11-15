@@ -10,13 +10,17 @@ export const TextareaContainerCss = styled.div`
 
   @media (min-width: 768px) {
     left: 264px;
-    width: 50%;
+    width: 40%;
   }
 
   @media (min-width: 1200px) {
-    left: 264px;
+    left: 304px;
     width: 50%;
   }
+`;
+export const SpanCss = styled.span`
+  color: #7c767d;
+  margin-right: 20px;
 `;
 
 export const TextareaCss = styled.textarea`
@@ -58,9 +62,7 @@ export const TypingButtonCss = styled.span`
   bottom: 10px; /* Adjust the distance from the bottom as needed */
   right: 7px; /* Adjust the distance from the right as needed */
   background: inherit;
-  // box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
 
-  // fond-size: 30px;
   color: var(--outgoing-chat-bg-dark);
   border: none;
   padding: 8px 12px;
