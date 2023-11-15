@@ -24,6 +24,13 @@ export const ContainerCss = styled.div`
     position: fixed;
     display: ${props => props.showmodal || 'flex'};
   }
+
+  @media (min-width: 1440px) {
+    height: 100vh;
+    width: 244px;
+    position: fixed;
+    display: ${props => props.showmodal || 'flex'};
+  }
 `;
 
 export const BoxSt = styled.div`

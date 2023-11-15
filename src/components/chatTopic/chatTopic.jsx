@@ -1,12 +1,11 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import {
   TopiсBoxCss,
   SpanSt,
   SvgCss,
   ConfirmDialogCss,
+  ButtonCss,
 } from 'components/chatTopic/chatTopic.styled';
-import { confirmDialog, ConfirmDialog } from 'primereact/confirmdialog';
-import { Button } from 'primereact/button';
 
 import { useDispatch } from 'react-redux';
 import { setCurrentChat } from 'Redux/chatComponentSlice';
@@ -45,14 +44,13 @@ export const ChatTopic = ({ chatName, chatId }) => {
       <MessageSquare />
       <p>{chatName}</p>
       <SpanSt id={chatId}>
-        {/*  */}
-        <Button
+        <ButtonCss
           onClick={() => setConfirmVisible(true)}
           icon="pi pi-arrow-down-right"
           className="p-button-warning mr-2"
         >
           <Delete />
-        </Button>
+        </ButtonCss>
       </SpanSt>
     </TopiсBoxCss>
   );
@@ -77,7 +75,7 @@ export const Delete = ({ size = 18, color = '' }) => (
   </SvgCss>
 );
 
-const MessageSquare = ({ size = 24, color = '#dad5d5' }) => (
+const MessageSquare = ({ size = 20, color = '#dad5d5' }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={size}

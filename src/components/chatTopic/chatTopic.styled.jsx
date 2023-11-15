@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { ConfirmDialog } from 'primereact/confirmdialog';
+import { Button } from 'primereact/button';
 
-export const Button = styled.button`
+export const ButtonCss = styled(Button)`
   padding: 8px 10px;
   font: inherit;
   cursor: pointer;
@@ -9,11 +10,7 @@ export const Button = styled.button`
   border: 1px solid transparent;
   color: #cfcaca;
   font-size: 20px;
-  background-image: linear-gradient(
-    31deg,
-    rgba(27, 163, 196, 1) 0%,
-    rgba(5, 25, 55, 1) 41%
-  );
+  background: inherit;
   transition: all 250ms;
 
   &:hover,
@@ -25,10 +22,19 @@ export const Button = styled.button`
 `;
 
 export const ConfirmDialogCss = styled(ConfirmDialog)`
+  width: 75vw;
   padding: 34px;
   border-radius: 6px;
   background-color: #fff;
   text-align: center;
+
+  @media (min-width: 640px) {
+    width: 90vw;
+  }
+
+  @media (min-width: 906px) {
+    width: 50vw;
+  }
 
   .p-dialog-title {
     margin-bottom: 8px;
@@ -36,6 +42,8 @@ export const ConfirmDialogCss = styled(ConfirmDialog)`
 
   .p-confirm-dialog-message {
     margin-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .p-confirm-dialog-reject {
@@ -86,7 +94,7 @@ export const TopiсBoxCss = styled.div`
   margin-bottom: 24px;
   border: 1px solid rgba(5, 25, 55, 1);
   border-radius: 6px;
-  transition: color 250ms ease-in-out, background 250ms ease-in-out;
+  transition: all 250ms;
 
   &:hover {
     color: var(--outgoing-chat-bg);
@@ -104,7 +112,7 @@ export const SpanSt = styled.span`
   padding: 8px 10px;
 
   position: absolute;
-  top: 3px;
+  top: -4px;
   right: 2%;
 `;
 
